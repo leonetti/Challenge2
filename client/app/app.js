@@ -1,22 +1,22 @@
 angular.module('myAngular', [
 	'myAngular.main',
   'myAngular.services',
-  'myAngular.login',
+  'myAngular.home',
   'ui.router'
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('login', {
-      url: '/login',
-      templateUrl: 'app/login/login.html',
-      controller: 'loginController',
+    .state('home', {
+      url: '/home',
+      templateUrl: 'app/home/home.html',
+      controller: 'homeController',
       data: {
         requireLogin: false
       }
     })
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/home');
 })
 
 .run(function () {
