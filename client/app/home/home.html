@@ -7,7 +7,7 @@
 
 <table ng-table="tableParams" class="table" show-filter="true">
     <tr ng-repeat="item in items">
-        <td title="'Image'"><img src="{{item.product.photo}}"></td>
-        <td title="'Name'" class="table__name">{{item.product.invoiceDescription}}</td>
+        <td><img class="table__image" style="background-image:url('{{item.product.photo}}')"></td>
+        <td class="table__name">{{item.product.invoiceDescription}}</td>
     </tr>
 </table>

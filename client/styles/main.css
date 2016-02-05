@@ -61,11 +61,9 @@ html {
 table {
   width: 80%;
   margin: 0 auto;
-  border: 1px solid black;
 }
 
 tr {
-  border: 1px solid green;
   display: inline-block;
   height: 100px;
   width: 100px;
@@ -78,8 +76,20 @@ td {
 }
 
 img {
-  width: 100%;
-  max-height: 80px;
+  height: 100%;
+  max-height: 60px;
+  display: block;
+  margin: 0 auto;
+  content: "";
+}
+
+.table__image {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-repeat:   no-repeat;
+  background-position: center;
+  background-size: 40px;
 }
 
 .table__name {
