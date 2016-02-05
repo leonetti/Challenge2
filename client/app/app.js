@@ -7,14 +7,14 @@ angular.module('myAngular', [
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('home', {
-      url: '/home',
-      templateUrl: 'app/home/home.html',
-      controller: 'homeController',
-      data: {
-        requireLogin: false
-      }
-    })
+  .state('home', {
+    url: '/home',
+    templateUrl: 'app/home/home.html',
+    controller: 'homeController',
+    data: {
+      requireLogin: false
+    }
+  })
 
   $urlRouterProvider.otherwise('/home');
 })

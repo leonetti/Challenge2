@@ -1,1 +1,13 @@
-<p>Login</p>
+<input id="searchText" type="search" placeholder="search products..." ng-model="searchText" ng-keyup="search(searchText)">
+
+<!-- <div ng-repeat = "item in items">
+  <p>{{item.product.invoiceDescription}}</p>
+  <img src="{{item.product.photo}}">
+</div> -->
+
+<table ng-table="tableParams" class="table" show-filter="true">
+    <tr ng-repeat="item in items">
+        <td title="'Image'"><img src="{{item.product.photo}}"></td>
+        <td title="'Name'" class="table__name">{{item.product.invoiceDescription}}</td>
+    </tr>
+</table>
