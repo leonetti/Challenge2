@@ -60,41 +60,68 @@ html {
 
 table {
   width: 80%;
+  max-width: 900px;
+  display: block;
   margin: 0 auto;
 }
 
 tr {
   display: inline-block;
-  height: 100px;
-  width: 100px;
-  position: relative;
+  height: 200px;
+  width: 100%;
+  margin-top: 30px;
 }
 
 td {
-  width: 80%;
-  margin-left: 10%;
-}
-
-img {
-  height: 100%;
-  max-height: 60px;
-  display: block;
-  margin: 0 auto;
-  content: "";
+  border: 1px dashed #006475;
+  width: 180px;
+  display: inline-block;
 }
 
 .table__image {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
+  margin-left: 10px;
+  margin-top: 10px;
   background-repeat:   no-repeat;
   background-position: center;
-  background-size: 40px;
+  background-size: 60px;
 }
 
 .table__name {
-  display: block;
-  position: absolute;
-  bottom: 0;
   text-align: center;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.navigation {
+  display: block;
+  margin: 10px auto;
+  width: 130px;
+}
+
+.num__items {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+#searchText {
+  width: 80%;
+  margin: 50px 0 50px 10%;
+}
+
+.page__numbers {
+  margin-top: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.page__number {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.page__numbers p {
+  display: inline-block;
 }

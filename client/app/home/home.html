@@ -1,13 +1,34 @@
 <input id="searchText" type="search" placeholder="search products..." ng-model="searchText" ng-keyup="search(searchText)">
 
-<!-- <div ng-repeat = "item in items">
-  <p>{{item.product.invoiceDescription}}</p>
-  <img src="{{item.product.photo}}">
-</div> -->
+<p class="num__items">There are {{items.length}} items matching your search</p>
 
-<table ng-table="tableParams" class="table" show-filter="true">
+<!-- <table ng-table="tableParams" class="table" show-filter="true">
     <tr ng-repeat="item in items">
-        <td><img class="table__image" style="background-image:url('{{item.product.photo}}')"></td>
+        <td><div class="table__image" style="background-image:url('{{item.product.photo}}')"></div></td>
         <td class="table__name">{{item.product.invoiceDescription}}</td>
     </tr>
+</table> -->
+
+<table ng-table="tableParams" class="table" show-filter="true">
+    <tr>
+        <td ng-repeat="item in items | startFrom:currentPage*perPage | limitTo:perPage">
+          <div class="table__image" style="background-image:url('{{item.product.photo}}')"></div>
+          <p class="table__name">{{item.product.invoiceDescription}}</p>
+        </td>
+    </tr>
 </table>
+
+<div class="page__numbers">
+  <p ng-repeat="i in pages" ng-style="{color: pageColor(i)}" ng-click="changePage(i)" class="page__number" ng-if="i-4 <= currentPage && i+4 >= currentPage && numberOfPages > 5">{{i}}</p>
+</div>
+
+<div class="navigation">
+  <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+    Previous
+  </button>
+  {{currentPage}}/{{numberOfPages}}
+  <button ng-disabled="currentPage >= items.length/perPage" ng-click="currentPage=currentPage+1">
+    Next
+  </button>
+</div>
+
